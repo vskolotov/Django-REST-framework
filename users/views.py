@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .serializers import SiteUserModelSerializer
+from .models import SiteUser
 
-# Create your views here.
+
+class SiteUserViewSet(ModelViewSet):
+    serializer_class = SiteUserModelSerializer
+    queryset = SiteUser.objects.all()
