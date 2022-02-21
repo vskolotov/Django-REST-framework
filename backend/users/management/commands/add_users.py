@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand
-from users.models import SiteUser
+from backend.users.models import SiteUser
 import json
 import os
 
