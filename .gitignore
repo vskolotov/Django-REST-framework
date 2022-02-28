@@ -150,7 +150,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-db.sqlite3
+backend/db.sqlite3
 ../.idea
 node_modules
 local_settings.py

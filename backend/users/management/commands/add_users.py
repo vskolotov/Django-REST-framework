@@ -4,7 +4,7 @@ from users.models import SiteUser
 import json
 import os
 
-JSON_PATH = 'users\json'
+JSON_PATH = 'users/json'
 
 
 def load_from_json(file_name):
