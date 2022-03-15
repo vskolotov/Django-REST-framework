@@ -1,10 +1,10 @@
-import {Link} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 
 const SiteProjectItem = ({project}) => {
     return (
         <tr>
             <td>
-               <Link to={`/projects/${project.id}`} > {project.title}</Link>
+                {project.title}
             </td>
             <td>
                 {project.repository}
@@ -17,7 +17,9 @@ const SiteProjectItem = ({project}) => {
 }
 
 
-const SiteProjectsList = ({projects}) => {
+const SiteProject = ({projects}) => {
+    let {id} = useParams()
+    let filteredProject = projects.filter((project) => project.id == id)
     return (
         <table>
             <th>
@@ -29,9 +31,9 @@ const SiteProjectsList = ({projects}) => {
             <th>
                 Users
             </th>
-            {projects.map((project) => <SiteProjectItem project={project}/>)}
+            {filteredProject.map((project) => <SiteProjectItem project={project}/>)}
         </table>
     )
 }
 
-export default SiteProjectsList
+export default SiteProject

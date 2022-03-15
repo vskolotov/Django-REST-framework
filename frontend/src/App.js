@@ -9,6 +9,7 @@ import axios from 'axios'
 import SiteProjectsList from "./components/SiteProjectsList.js";
 import SiteNotesList from "./components/SiteNotesList.js";
 import {BrowserRouter, Route, Routes, Link, useLocation, Navigate} from 'react-router-dom'
+import SiteProject from "./components/SiteProject";
 
 const NotFound = () => {
     let location = useLocation()
@@ -54,6 +55,7 @@ class App extends React.Component {
                         <Route exact path='/' element={<SiteUsersList users={this.state.users}/>}/>
                         <Route exact path='/projects' element={<SiteProjectsList projects={this.state.projects}/>}/>
                         <Route exact path='/notes' element={<SiteNotesList notes={this.state.notes}/>}/>
+                        <Route exact path='/projects/:id' element={<SiteProject projects={this.state.projects}/>}/>
                         <Route path="*" element={<NotFound/>}/>
                     </Routes>
                     <SiteFooter/>
