@@ -8,7 +8,7 @@ import SiteFooter from './components/SiteFooter.js'
 import axios from 'axios'
 import SiteProjectsList from "./components/SiteProjectsList.js";
 import SiteNotesList from "./components/SiteNotesList.js";
-import {BrowserRouter, Route, Routes, Link, useLocation, Navigate} from 'react-router-dom'
+import {BrowserRouter, Route, Routes, useLocation} from 'react-router-dom'
 import SiteProject from "./components/SiteProject";
 
 const NotFound = () => {
