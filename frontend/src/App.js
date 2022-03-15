@@ -8,7 +8,14 @@ import SiteFooter from './components/SiteFooter.js'
 import axios from 'axios'
 import SiteProjectsList from "./components/SiteProjectsList.js";
 import SiteNotesList from "./components/SiteNotesList.js";
+import {BrowserRouter, Route, Routes, Link, useLocation, Navigate} from 'react-router-dom'
 
+const NotFound = () => {
+    let location = useLocation()
+    return (
+        <div> Page {location.pathname} not found </div>
+    )
+}
 
 class App extends React.Component {
     constructor(props) {
@@ -41,11 +48,17 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <SiteMenu/>
-                <SiteUsersList users={this.state.users}/>
-                <SiteProjectsList projects={this.state.projects}/>
-                <SiteNotesList notes={this.state.notes}/>
-                <SiteFooter/>
+                <BrowserRouter>
+                    <SiteMenu/>
+                    <Routes>
+                        <Route exact path='/' element={<SiteUsersList users={this.state.users}/>}/>
+                        <Route exact path='/projects' element={<SiteProjectsList projects={this.state.projects}/>}/>
+                        <Route exact path='/notes' element={<SiteNotesList notes={this.state.notes}/>}/>
+                        <Route path="*" element={<NotFound/>}/>
+                    </Routes>
+                    <SiteFooter/>
+                </BrowserRouter>
+
             </div>
         )
     }

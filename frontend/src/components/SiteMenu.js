@@ -1,9 +1,14 @@
+import {BrowserRouter, Route, Routes, Link, useLocation, Navigate} from 'react-router-dom'
+
 const SiteMenu = () => {
     return (
-        <ul class='menu'>
-            <li>пункт 1</li>
-            <li>пункт 2</li>
-        </ul>
+
+        <nav class='menu'>
+            <li><Link to='/'>Users</Link></li>
+            <li><Link to='/projects'>Projects</Link></li>
+            <li><Link to='/notes'>Notes</Link></li>
+        </nav>
+
     )
 }
 
