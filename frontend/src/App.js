@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from './logo.svg';
 import './App.css';
 import './style.css'
 import SiteUsersList from './components/SiteUsersList.js'
