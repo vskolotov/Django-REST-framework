@@ -30,7 +30,7 @@ const SiteUsersList = ({users}) => {
             <th>
                 Email
             </th>
-             <th>
+            <th>
                 Rule
             </th>
             {users.map((user) => <SiteUserItem user={user}/>)}

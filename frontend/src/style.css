@@ -1,3 +1,5 @@
+
+
 table {
     width: 50%;
     margin-bottom: 20px;
@@ -17,10 +19,22 @@ table td {
     padding: 5px;
     text-align: center;
 }
+nav{
+    width: 48%;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: cadetblue;
+    text-align: center;
 
+}
 .menu > li {
     display: inline;
     list-style: none;
-    padding: 5px;
-
+    padding: 10px;
 }
+ a {
+    text-decoration: none;
+   }
