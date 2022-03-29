@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'users',
+    'todo',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'backend.urls'
 
 CORS_ALLOWED_ORIGINS = [
-   "http://localhost:3000",
+    "http://localhost:3000",
 ]
 
 TEMPLATES = [
@@ -123,3 +124,23 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_RENDERER_CLASSES': (
+        'djangorestframework_camel_case.render.CamelCaseJSONRenderer',
+        'djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer',
+        # Any other renders
+    ),
+
+    'DEFAULT_PARSER_CLASSES': (
+        # If you use MultiPartFormParser or FormParser, we also have a camel case version
+        'djangorestframework_camel_case.parser.CamelCaseFormParser',
+        'djangorestframework_camel_case.parser.CamelCaseMultiPartParser',
+        'djangorestframework_camel_case.parser.CamelCaseJSONParser',
+        # Any other parsers
+    ),
+    'JSON_UNDERSCOREIZE': {
+        'no_underscore_before_number': True,
+    },
+}
