@@ -15,6 +15,7 @@ def load_from_json(file_name):
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
+        SiteUser.objects.create_superuser(username='admin', email='admin@ya.ru', password='adminadmin')
         users = load_from_json('users')
 
         SiteUser.objects.all().delete()
@@ -22,4 +23,4 @@ class Command(BaseCommand):
             new_user = SiteUser(**user)
             new_user.save()
 
-        User.objects.create_superuser(username='admin', email='admin@ya.ru', password='adminadmin')
+

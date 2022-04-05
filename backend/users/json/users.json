@@ -1,5 +1,6 @@
 [
   {
+    "username": "mail-1",
     "password": "Qq12345",
     "email": "mail-1@mail.ru",
     "first_name": "user-1",
@@ -7,6 +8,7 @@
     "rule": "user"
   },
   {
+    "username": "mail-2",
     "password": "Qq12345",
     "email": "mail-2@mail.ru",
     "first_name": "user-2",
@@ -14,6 +16,7 @@
     "rule": "user"
   },
   {
+    "username": "mail-3",
     "password": "Qq12345",
     "email": "mail-3@mail.ru",
     "first_name": "user-3",
