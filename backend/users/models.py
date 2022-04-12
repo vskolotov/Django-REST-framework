@@ -1,8 +1,8 @@
 from django.db import models
-from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import AbstractUser
 
 
-class SiteUser(AbstractBaseUser):
+class SiteUser(AbstractUser):
     ADMINISTRATOR = 'admin'
     MANAGER = 'manager'
     DEVELOPER = 'dev'
@@ -11,12 +11,12 @@ class SiteUser(AbstractBaseUser):
     ROLE_CHOICES = (
         (ADMINISTRATOR, 'Администратор'),
         (MANAGER, 'Менеджер проекта'),
-        (DEVELOPER, 'Разрабочик'),
+        (DEVELOPER, 'Разработчик'),
         (USER, 'Пользователь')
     )
-    email = models.EmailField(verbose_name='email', unique=True, blank=False)
-    first_name = models.CharField(verbose_name='name', max_length=30, blank=True)
-    last_name = models.CharField(verbose_name='surname', max_length=30, blank=True)
+    email = models.CharField(max_length=64, unique=True)
+    username = models.CharField(max_length=64, unique=True)
+    first_name = models.CharField(max_length=64)
+    last_name = models.CharField(max_length=64)
     date_joined = models.DateTimeField(verbose_name='registered', auto_now_add=True)
     rule = models.CharField(verbose_name='rule', max_length=64, choices=ROLE_CHOICES, default=USER)
-    USERNAME_FIELD = 'email'
