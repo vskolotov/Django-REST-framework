@@ -5,4 +5,10 @@ from .models import SiteUser
 class SiteUserModelSerializer(ModelSerializer):
     class Meta:
         model = SiteUser
-        fields = '__all__'
+        fields = ['email', 'username', 'first_name', 'last_name']
+
+
+class SiteUserModelSerializerV2(ModelSerializer):
+    class Meta:
+        model = SiteUser
+        fields = ['email', 'username', 'first_name', 'last_name', 'is_superuser', 'is_staff']
